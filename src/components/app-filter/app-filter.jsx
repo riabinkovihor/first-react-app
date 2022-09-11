@@ -16,7 +16,8 @@ class AppFilter extends Component {
                 },
                 {
                     filter: 'salary',
-                    title: ' З/П больше 1000$'
+                    title: ' З/П больше 1000$',
+                    colored: true
                 }
             ],
             filter: null
@@ -34,13 +35,17 @@ class AppFilter extends Component {
         const buttons = buttonsData.map((item,i) => {
             const active = item.filter === filter
             const clazz = active ? 'btn-light' : 'btn-outline-light'
-            return (<button className={`btn ${clazz}`}
-                            type="button"
-                            key={i}
-                            onClick={() => this.onUpdateFilter(item.filter)}
-            >
-                {item.title}
-            </button>)
+            const style = item.colored ? {color:'red'} : null
+            return (
+                <button
+                    className={`btn ${clazz}`}
+                    style={style}
+                    type="button"
+                    key={i}
+                    onClick={() => this.onUpdateFilter(item.filter)}
+                >
+                    {item.title}
+                </button>)
         })
 
         return (
