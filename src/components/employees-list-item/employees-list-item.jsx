@@ -9,7 +9,8 @@ import './employees-list-item.css'
         increase,
         rise,
         onDelete,
-        onToggleProp
+        onToggleProp,
+        onUpdateSalary
     } = props
 
     const classNames = () => {
@@ -28,7 +29,7 @@ import './employees-list-item.css'
     return (
         <li  className={classNames()} >
             <span onClick={onToggleProp} data-toggle={'rise'} className="list-group-item-label">{name}</span>
-            <input type="text" className="list-group-item-input" defaultValue={salary + '$'}/>
+            <input type="text" value={salary} className="list-group-item-input" onChange={onUpdateSalary}/>
             <div className='d-flex justify-content-center align-items-center'>
                 <button type="button"
                         className="btn-cookie btn-sm"
