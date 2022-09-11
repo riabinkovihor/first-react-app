@@ -1,5 +1,5 @@
 import {Component} from "react"
-import './app-filter.css'
+import styles from './app-filter.module.css'
 
 class AppFilter extends Component {
     constructor(props) {
@@ -49,7 +49,7 @@ class AppFilter extends Component {
         })
 
         return (
-            <div className="btn-group">
+            <div className={styles['btn-group']}>
                 {buttons}
             </div>
         )
