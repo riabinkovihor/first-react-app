@@ -35,7 +35,7 @@ class AppFilter extends Component {
         const buttons = buttonsData.map((item,i) => {
             const active = item.filter === filter
             const clazz = active ? 'btn-light' : 'btn-outline-light'
-            const style = item.colored ? {color:'red'} : null
+            const style = item.colored ? {color:'orange'} : null
             return (
                 <button
                     className={`btn ${clazz}`}
